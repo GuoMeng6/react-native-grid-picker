@@ -1,1 +1,1 @@
-require('./WeekPicker/');
+require('./WeekPicker');
