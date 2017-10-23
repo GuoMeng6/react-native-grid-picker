@@ -33,15 +33,15 @@ const displayData = [
 ];
 
 return (
-	<View>
-		<GridPicker
-  			coordinate={{ row:10, column:10 }}
-  			itemStyle={{ width: 120, height: 60 }}
-			displayData={displayData}
-  			onSelectedChanged={currentItemIndex => console.log(currentItemIndex)}
-  			type="COLUMN"
-		/>
-	</View>
+  <View>
+    <GridPicker
+      coordinate={{ row:10, column:10 }}
+      itemStyle={{ width: 120, height: 60 }}
+      displayData={displayData}
+      onSelectedChanged={currentItemIndex => console.log(currentItemIndex)}
+      type="COLUMN"
+    />
+  </View>
 )
 
 ```
