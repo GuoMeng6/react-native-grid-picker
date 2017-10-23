@@ -1,1 +1,1 @@
-require('./WeekPicker');
+module.exports=require('./WeekPicker')
