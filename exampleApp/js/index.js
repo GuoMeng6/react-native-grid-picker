@@ -18,7 +18,7 @@ class ReactPicker extends Component {
     super(props);
     this.onScroll = this.onScroll.bind(this);
     this.state = {
-      rentData: [],
+      displayData: [],
     };
     this.onSelectedChanged = this.onSelectedChanged.bind(this);
   }
@@ -87,7 +87,7 @@ class ReactPicker extends Component {
             };
           });
           this.setState({
-            rentData: filterData,
+            displayData: filterData,
           });
         }
       });
@@ -103,7 +103,7 @@ class ReactPicker extends Component {
       <View style={styles.container}>
         <ScrollLayout
           timeStatus={{ ...defaultData, ...propsStatus }}
-          rentData={this.state.rentData}
+          displayData={this.state.displayData}
           onSelectedChanged={this.onSelectedChanged}
         />
         <HeadView

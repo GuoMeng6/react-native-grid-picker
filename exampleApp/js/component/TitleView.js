@@ -32,10 +32,7 @@ class TitleView extends Component {
   render() {
     return (
       <View
-        style={[
-          styles.container,
-          { height: UI.size.rowHeight * this.props.timeLength * 2 },
-        ]}
+        style={[styles.container, { height: 60 * this.props.timeLength * 2 }]}
       >
         {time.map((data, index) => (
           <View key={data + index} style={styles.itemView}>
@@ -43,7 +40,6 @@ class TitleView extends Component {
               <View style={styles.centerView}>
                 <Text style={{ fontSize: 12 }}>{data}</Text>
               </View>
-              <View style={{ width: 1, backgroundColor: '#000000' }} />
             </View>
             <View style={{ height: 1, backgroundColor: '#000000' }} />
           </View>
@@ -55,11 +51,12 @@ class TitleView extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    width: UI.size.number100,
+    width: 100,
+    marginTop: 1,
   },
   itemView: {
-    height: UI.size.rowHeight * 2,
-    width: UI.size.number100,
+    height: 60 * 2,
+    width: 100,
   },
   rowView: {
     flex: 1,

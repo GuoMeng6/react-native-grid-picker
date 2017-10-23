@@ -15,8 +15,8 @@ class HeadView extends Component {
           <View
             key={data + index}
             style={{
-              height: UI.size.rowHeight,
-              width: (UI.size.deviceWidth - UI.size.number120) / 7,
+              height: 60,
+              width: 120,
             }}
           >
             <View
@@ -41,7 +41,6 @@ class HeadView extends Component {
               </View>
               <View style={{ width: 1, backgroundColor: '#000000' }} />
             </View>
-            <View style={{ height: 1, backgroundColor: '#000000' }} />
           </View>
         ))}
       </View>
@@ -54,9 +53,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     flexDirection: 'row',
     top: 0,
-    left: UI.size.number100,
-    width: UI.size.deviceWidth - UI.size.number120,
-    height: UI.size.rowHeight,
+    left: 101,
+    width: 120 * 7,
+    height: 60,
   },
 });
 

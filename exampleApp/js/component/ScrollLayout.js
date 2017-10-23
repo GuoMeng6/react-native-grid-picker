@@ -3,7 +3,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 
 import UI from 'UI';
 import TitleView from './TitleView';
-import WeekPicker from './WeekPicker';
+import WeekPicker from '../WeekPicker';
 
 class ScrollLayout extends Component {
   render() {
@@ -15,12 +15,7 @@ class ScrollLayout extends Component {
         bounces={false}
         showsVerticalScrollIndicator={false}
       >
-        <View
-          style={[
-            styles.scrollView,
-            { height: UI.size.rowHeight * timeStamp * 2 },
-          ]}
-        >
+        <View style={[styles.scrollView, { height: 60 * timeStamp * 2 }]}>
           <TitleView
             timeStatus={this.props.timeStatus}
             timeLength={
@@ -30,16 +25,18 @@ class ScrollLayout extends Component {
             }
           />
           <WeekPicker
-            data={{
-              timeLength:
-                this.props.timeStatus.endTime -
-                this.props.timeStatus.startTime +
-                1,
-              dayLength: 7,
+            coordinate={{
+              row:
+                (this.props.timeStatus.endTime -
+                  this.props.timeStatus.startTime +
+                  1) *
+                2,
+              column: 7,
             }}
-            rentData={this.props.rentData}
+            displayData={this.props.displayData}
             onSelectedChanged={this.props.onSelectedChanged}
             type="COLUMN"
+            itemStyle={{ width: 120, height: 60 }}
           />
         </View>
       </ScrollView>
@@ -50,9 +47,9 @@ class ScrollLayout extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: UI.size.rowHeight,
+    marginTop: 60,
     width: UI.size.deviceWidth,
-    height: UI.size.deviceHeight - UI.size.rowHeight - 20,
+    height: UI.size.deviceHeight - 80,
   },
   scrollView: {
     width: UI.size.deviceWidth,
