@@ -2,13 +2,13 @@
   "name": "react-native-week-picker",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "WeekPicker/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GuoMeng6/npmtest.git"
+    "url": "git+https://github.com/GuoMeng6/react-native-week-picker.git"
   },
   "keywords": [
     "boy1598753"
@@ -16,7 +16,7 @@
   "author": "GuoMeng6",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GuoMeng6/npmtest/issues"
+    "url": "https://github.com/GuoMeng6/react-native-week-picker/issues"
   },
-  "homepage": "https://github.com/GuoMeng6/npmtest#readme"
+  "homepage": "https://github.com/GuoMeng6/react-native-week-picker#readme"
 }
