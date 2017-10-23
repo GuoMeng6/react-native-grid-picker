@@ -3,7 +3,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 
 import UI from 'UI';
 import TitleView from './TitleView';
-import WeekPicker from '../WeekPicker';
+import GridPicker from '../GridPicker';
 
 class ScrollLayout extends Component {
   render() {
@@ -24,7 +24,7 @@ class ScrollLayout extends Component {
               1
             }
           />
-          <WeekPicker
+          <GridPicker
             coordinate={{
               row:
                 (this.props.timeStatus.endTime -

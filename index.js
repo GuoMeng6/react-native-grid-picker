@@ -1,1 +1,1 @@
-module.exports=require('./WeekPicker')
+module.exports=require('./GridPicker')

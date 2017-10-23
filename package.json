@@ -1,5 +1,5 @@
 {
-  "name": "react-native-week-picker",
+  "name": "react-native-grid-picker",
   "version": "0.0.3",
   "description": "",
   "main": "index.js",
@@ -10,9 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/GuoMeng6/react-native-week-picker.git"
   },
-  "keywords": [
-    "boy1598753"
-  ],
+  "keywords": [""],
   "author": "GuoMeng6",
   "license": "ISC",
   "bugs": {

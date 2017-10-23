@@ -30,7 +30,7 @@ const defaultProps = {
   onSelectedChanged: () => {},
 };
 
-class WeekPicker extends Component {
+class GridPicker extends Component {
   static propTypes = propTypes;
   static defaultProps = defaultProps;
 
@@ -323,4 +323,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default WeekPicker;
+export default GridPicker;
