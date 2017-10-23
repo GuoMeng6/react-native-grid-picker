@@ -4,8 +4,6 @@ import { View, StyleSheet } from 'react-native';
 import moment from 'moment';
 import zhLocal from 'moment/locale/zh-cn';
 
-import GridLayout from './component/GridLayout.js';
-import TitleView from './component/TitleView';
 import HeadView from './component/HeadView';
 import ScrollLayout from './component/ScrollLayout';
 

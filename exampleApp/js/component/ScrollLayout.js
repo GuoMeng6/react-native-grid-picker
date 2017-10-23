@@ -3,7 +3,7 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 
 import UI from 'UI';
 import TitleView from './TitleView';
-import GridLayout from './GridLayout';
+import WeekPicker from './WeekPicker';
 
 class ScrollLayout extends Component {
   render() {
@@ -29,7 +29,7 @@ class ScrollLayout extends Component {
               1
             }
           />
-          <GridLayout
+          <WeekPicker
             data={{
               timeLength:
                 this.props.timeStatus.endTime -
@@ -37,8 +37,6 @@ class ScrollLayout extends Component {
                 1,
               dayLength: 7,
             }}
-            timeStatus={this.props.timeStatus}
-            weekMoment={this.props.timeStatus.weekMoment}
             rentData={this.props.rentData}
             onSelectedChanged={this.props.onSelectedChanged}
             type="COLUMN"

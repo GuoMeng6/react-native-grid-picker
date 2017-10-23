@@ -9,10 +9,28 @@ import {
 } from 'react-native';
 
 import UI from 'UI';
-import moment from 'moment';
+import PropTypes from 'prop-types';
 import ClickViewItem from './ClickViewItem';
 
-class GridLayout extends Component {
+const propTypes = {
+  type: PropTypes.string,
+  data: PropTypes.object,
+  disabledOpacity: PropTypes.number,
+  rentData: PropTypes.array,
+  onSelectedChanged: PropTypes.func,
+};
+
+const defaultProps = {
+  type: 'COLUMN',
+  data: { timeLength: 20, dayLength: 7 },
+  rentData: [],
+  onSelectedChanged: () => {},
+};
+
+class WeekPicker extends Component {
+  static propTypes = propTypes;
+  static defaultProps = defaultProps;
+
   constructor(props) {
     super(props);
     const ds = new ListView.DataSource({
@@ -263,4 +281,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GridLayout;
+export default WeekPicker;
