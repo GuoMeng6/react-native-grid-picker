@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 class ClickViewItem extends Component {
   render() {
-    const { style, clearData, disabled, title, subTitle } = this.props;
+    const { style, clearData, disabled, data } = this.props;
     const deepStyle = JSON.parse(JSON.stringify(style));
     delete deepStyle.backgroundColor;
     return (
@@ -13,15 +13,20 @@ class ClickViewItem extends Component {
         onPress={clearData}
         disabled={disabled}
       >
-        <View
-          style={[
-            styles.view,
-            { backgroundColor: style.backgroundColor || '#00ffff' },
-          ]}
-        >
-          <Text style={{ fontSize: 14 }}>{title}</Text>
-          <Text style={{ fontSize: 12 }}>{subTitle}</Text>
-        </View>
+        {this.props.displayRow || this.props.clickRenderItem ? (
+          (this.props.displayRow && this.props.displayRow(data)) ||
+          (this.props.clickRenderItem && this.props.clickRenderItem(data))
+        ) : (
+          <View
+            style={[
+              styles.view,
+              { backgroundColor: style.backgroundColor || '#00ffff' },
+            ]}
+          >
+            <Text style={{ fontSize: 14 }}>{data && data.title}</Text>
+            <Text style={{ fontSize: 12 }}>{data && data.subTitle}</Text>
+          </View>
+        )}
       </TouchableOpacity>
     );
   }
@@ -30,8 +35,6 @@ class ClickViewItem extends Component {
 const styles = StyleSheet.create({
   container: {
     position: 'absolute',
-    borderRadius: 4,
-    padding: 4,
   },
   view: {
     flex: 1,

@@ -39,11 +39,16 @@ class GridPicker extends Component {
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => r1 !== r2,
     });
-    const data = [];
-    const { row, column } = props.coordinate;
-    for (let i = 0; i < row * column; i++) {
-      data.push({ index: i });
+    let data = [];
+    if (props.dataSource) {
+      data = props.dataSource;
+    } else {
+      const { row, column } = props.coordinate;
+      for (let i = 0; i < row * column; i++) {
+        data.push({ index: i });
+      }
     }
+    console.log('======== data = ', data);
     this.state = {
       defaultState: [],
       type: 0,
@@ -83,19 +88,19 @@ class GridPicker extends Component {
     //   }
     // }
 
-    // if (type === 'ALL') {
-    if (x < range.start.x) {
-      range.start.x = x;
-    } else {
-      range.end.x = x + 1;
-    }
+    if (type === 'ALL') {
+      if (x < range.start.x) {
+        range.start.x = x;
+      } else {
+        range.end.x = x + 1;
+      }
 
-    if (y < range.start.y) {
-      range.start.y = y;
-    } else {
-      range.end.y = y + 1;
+      if (y < range.start.y) {
+        range.start.y = y;
+      } else {
+        range.end.y = y + 1;
+      }
     }
-    // }
 
     if (type === 'CALENDAR') {
     }
@@ -181,22 +186,29 @@ class GridPicker extends Component {
         activeOpacity={1}
         onPress={this.onPress.bind(this, rowID)}
       >
-        <View
-          style={{
-            height: this.props.itemStyle.height,
-            width: this.props.itemStyle.width,
-          }}
-        >
-          <View style={styles.rowView}>
-            <View style={styles.textView}>
-              <Text>{rowID}</Text>
+        {this.props.renderRow ? (
+          this.props.renderRow(rowData, rowID)
+        ) : (
+          <View
+            style={{
+              height: this.props.itemStyle.height,
+              width: this.props.itemStyle.width,
+            }}
+          >
+            <View style={styles.rowView}>
+              <View style={styles.textView}>
+                <Text>{rowID}</Text>
+              </View>
+              <View
+                style={[
+                  styles.lineView,
+                  { height: this.props.itemStyle.height },
+                ]}
+              />
             </View>
-            <View
-              style={[styles.lineView, { height: this.props.itemStyle.height }]}
-            />
+            <View style={styles.line2View} />
           </View>
-          <View style={styles.line2View} />
-        </View>
+        )}
       </TouchableOpacity>
     );
   }
@@ -205,21 +217,25 @@ class GridPicker extends Component {
     const { row, column } = this.props.coordinate;
     return (
       <View style={{ flexDirection: 'row' }}>
-        <View
-          style={[
-            styles.lineStyle,
-            {
-              height: row * this.props.itemStyle.height,
-            },
-          ]}
-        />
-        <View>
+        {this.props.renderRow ? null : (
           <View
             style={[
-              styles.line2Style,
-              { width: column * this.props.itemStyle.width },
+              styles.lineStyle,
+              {
+                height: row * this.props.itemStyle.height,
+              },
             ]}
           />
+        )}
+        <View>
+          {this.props.renderRow ? null : (
+            <View
+              style={[
+                styles.line2Style,
+                { width: column * this.props.itemStyle.width },
+              ]}
+            />
+          )}
           <View
             style={[
               styles.container,
@@ -255,8 +271,8 @@ class GridPicker extends Component {
                   backgroundColor: '#ffe66f',
                 }}
                 disabled
-                title={data.title}
-                subTitle={data.subTitle}
+                data={data}
+                displayRow={this.props.displayRow}
               />
             ))}
             {this.state.defaultState.map((data, index) => (
@@ -272,6 +288,8 @@ class GridPicker extends Component {
                 }}
                 disabled={false}
                 clearData={this.clearData}
+                clickRenderItem={this.props.clickRenderItem}
+                data={data}
                 title={this.state.selectedItem && this.state.selectedItem.title}
                 subTitle={
                   this.state.selectedItem && this.state.selectedItem.subTitle

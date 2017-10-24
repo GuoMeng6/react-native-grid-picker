@@ -106,11 +106,13 @@ class ReactPicker extends Component {
           displayData={this.state.displayData}
           onSelectedChanged={this.onSelectedChanged}
         />
-        <HeadView
-          weekMoment={
-            (propsStatus && propsStatus.weekMoment) || defaultData.weekMoment
-          }
-        />
+        {
+          // <HeadView
+          //   weekMoment={
+          //     (propsStatus && propsStatus.weekMoment) || defaultData.weekMoment
+          //   }
+          // />
+        }
       </View>
     );
   }
