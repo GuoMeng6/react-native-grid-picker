@@ -4,6 +4,7 @@
 
 <img src="https://github.com/GuoMeng6/react-native-grid-picker/tree/master/source/react-native-grid-picker.gif" width="250" /> 
 
+![GitHub set up](https://github.com/GuoMeng6/react-native-grid-picker/tree/master/source/react-native-grid-picker.gif)
 ## 安装
 
 ```
