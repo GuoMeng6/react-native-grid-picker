@@ -1,6 +1,6 @@
 {
   "name": "react-native-grid-picker",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GuoMeng6/react-native-week-picker.git"
+    "url": "git+https://github.com/GuoMeng6/react-native-grid-picker.git"
   },
   "keywords": [""],
   "author": "GuoMeng6",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GuoMeng6/react-native-week-picker/issues"
+    "url": "https://github.com/GuoMeng6/react-native-grid-picker/issues"
   },
-  "homepage": "https://github.com/GuoMeng6/react-native-week-picker#readme"
+  "homepage": "https://github.com/GuoMeng6/react-native-grid-picker#readme"
 }
