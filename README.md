@@ -33,15 +33,15 @@ const displayData = [
 ];
 
 return (
-  <View>
-    <GridPicker
-      coordinate={{ row:10, column:10 }}
-      itemStyle={{ width: 120, height: 60 }}
-      displayData={displayData}
-      onSelectedChanged={currentItemIndex => console.log(currentItemIndex)}
-      type="COLUMN"
-    />
-  </View>
+	<View>
+		<GridPicker
+  			coordinate={{ row:10, column:10 }}
+  			itemStyle={{ width: 120, height: 60 }}
+			displayData={displayData}
+  			onSelectedChanged={currentItemIndex => console.log(currentItemIndex)}
+  			type="COLUMN"
+		/>
+	</View>
 )
 
 ```
@@ -51,8 +51,12 @@ return (
 |------|------|-------------|
 | ``coordinate`` | ``对象`` | 两个属性，`row`定义表格的行数，`column`定义表格的列数 |
 | ``itemStyle`` | ``对象`` | 定义小表格的样式 |
-| ``displayData`` | ``数组`` | 显示在表格上面的内容。五个属性，``start`` 定义小表格起始点坐标，`end`定义小表格结束点坐标，`title`定义标题内容，`subTitle`定义次标题内容，`style`定义小表格样式 |
-| ``type`` | ``字符串`` | `ROW`定义选择表格内容只可以横轴选择，`COLUMN`定义选择表格内容只可以纵向选择,`ALL`定义选择的表格内容既可跨行也可跨列 |
+| ``dataSource`` | ``数组`` | 定义表格依赖的数据资源 |
+| ``renderRow`` | ``函数`` | 返回一个可渲染的组建展示在小表格中 |
+| ``displayData`` | ``数组`` | 显示在表格上面的内容。五个属性，``start`` 定义小表格起始点坐标，`end`定义小表格结束点坐标，`title`定义标题内容，`subTitle`定义次标题内容，`style`定义小表格样式，所有的属性数据在`displayRow`函数中可以拿到 |
+| ``displayRow`` | ``函数`` | 返回一个可渲染的组建展示在小表格中，渲染的数据资源存放在`displayData`中 |
+| ``clickRenderItem`` | ``函数`` | 返回一个可渲染的组建展示在小表格中，在点击后渲染 |
+| ``type`` | ``字符串`` | `ROW`定义选择表格内容只可以横轴选择，`COLUMN`定义选择表格内容只可以纵向选择,`ALL`定义选择的表格内容既可跨行也可跨列,默认为 `ALL` |
 | ``onSelectedChanged`` | ``函数`` | 表格当前选中项有变化时回掉，返回选中项的坐标 |
 
 
