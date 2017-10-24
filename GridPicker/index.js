@@ -48,7 +48,6 @@ class GridPicker extends Component {
         data.push({ index: i });
       }
     }
-    console.log('======== data = ', data);
     this.state = {
       defaultState: [],
       type: 0,
@@ -88,19 +87,19 @@ class GridPicker extends Component {
     //   }
     // }
 
-    if (type === 'ALL') {
-      if (x < range.start.x) {
-        range.start.x = x;
-      } else {
-        range.end.x = x + 1;
-      }
-
-      if (y < range.start.y) {
-        range.start.y = y;
-      } else {
-        range.end.y = y + 1;
-      }
+    // if (type === 'ALL') {
+    if (x < range.start.x) {
+      range.start.x = x;
+    } else {
+      range.end.x = x + 1;
     }
+
+    if (y < range.start.y) {
+      range.start.y = y;
+    } else {
+      range.end.y = y + 1;
+    }
+    // }
 
     if (type === 'CALENDAR') {
     }
@@ -174,9 +173,9 @@ class GridPicker extends Component {
       this.onSelectedChanged([this.getCurrentClickItem(x, y)]);
       return;
     }
-    const mergeState = this.filterData(result[0], this.state.defaultState);
-    if (!mergeState) {
-    }
+    // const mergeState = this.filterData(result[0], this.state.defaultState);
+    // if (!mergeState) {
+    // }
     this.onSelectedChanged(result);
   }
 
