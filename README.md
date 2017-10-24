@@ -2,6 +2,8 @@
 
 加载一个网格布局
 
+<img src="https://github.com/GuoMeng6/react-native-grid-picker/tree/master/source/react-native-grid-picker.gif" width="250" /> 
+
 ## 安装
 
 ```
@@ -45,6 +47,9 @@ return (
 )
 
 ```
+
+## 例子
+[Example](https://github.com/GuoMeng6/react-native-grid-picker/blob/master/exampleApp/App.js)
 
 ## API
 | Prop | Type | Description |
