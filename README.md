@@ -2,7 +2,7 @@
 
 加载一个网格布局
 
-<img src="http://omoxprgv1.bkt.clouddn.com/react-native-grid-picker.gif" width="250" /> 
+<img src="http://omoxprgv1.bkt.clouddn.com/react-native-grid-picker.gif" width="500" /> 
 
 ## 安装
 
